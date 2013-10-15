@@ -139,6 +139,7 @@ our @commit = ( 'docker', 'commit' );
 push @commit, "-author=$author" if defined $author;
 push @commit, "-run=" . encode_json(\%metadata) if %metadata;
 push @commit, $cid;
-push @commit, "$repository/$tag";
+push @commit, "$repository";
+push @commit, "$tag";
 print "*** ", join(' ', @commit), "\n";
 exec(@commit);#!/usr/bin/env perl

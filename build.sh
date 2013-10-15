@@ -1,4 +1,5 @@
 #!/bin/sh
+ORG=scivm
 for dockerfile in `find . -name Dockerfile`
 do
    # get the base directory
@@ -8,5 +9,5 @@ do
    #   [0] directory where docker file exists
    #   [1] repository name
    #   [2] tag name
-   perl -X ./docker-compile.pl $dir scivm $dir
+   perl -X ./docker-compile.pl $dir $ORG/$dir latest
 done
