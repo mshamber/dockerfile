@@ -1,3 +1,4 @@
+python --version
 mkvirtualenv scivm.com
 pip install Django==1.5.4
 django-admin.py startproject --template=https://github.com/pinax/pinax-project-account/zipball/master scivm.com
