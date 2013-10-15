@@ -12,7 +12,7 @@ RUN apt-get update
 
 RUN apt-get -y install nginx
 
-RUN wget -O /etc/nginx/sites-available/default https://www.github.com/mshamber/
+RUN wget -O /etc/nginx/sites-available/default https://raw.github.com/mshamber/dockerfile/master/nginx-django/default
 RUN echo "daemon off;" >> /etc/nginx/nginx.conf
 RUN mkdir /var/www
 

@@ -15,7 +15,7 @@ RUN apt-get update
 
 RUN apt-get -y install nginx php5-fpm php5-mysql php-apc php5-imagick php5-imap php5-mcrypt
 
-RUN wget -O /etc/nginx/sites-available/default https://www.github.com/mshamber/
+RUN wget -O /etc/nginx/sites-available/default https://raw.github.com/mshamber/dockerfile/master/nginx-django/default
 RUN echo "cgi.fix_pathinfo = 0;" >> /etc/php5/fpm/php.ini
 RUN echo "daemon off;" >> /etc/nginx/nginx.conf
 RUN mkdir /var/www
