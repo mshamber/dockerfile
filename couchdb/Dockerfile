@@ -5,10 +5,12 @@
 # Currently installs couchdb 1.3.1
 
 FROM ubuntu
-MAINTAINER Kimbro Staken
+MAINTAINER Michael Shamberger <shambergerm at nospam gmail.com>
 
-RUN echo "deb http://us.archive.ubuntu.com/ubuntu/ precise universe" >> /etc/apt/sources.list
-RUN apt-get -y update
+RUN echo "deb http://archive.ubuntu.com/ubuntu precise main universe" > /etc/apt/sources.list
+RUN apt-get update
+RUN apt-get upgrade -y
+
 RUN apt-get install -y g++
 RUN apt-get install -y erlang-dev erlang-manpages erlang-base-hipe erlang-eunit erlang-nox erlang-xmerl erlang-inets
 

@@ -17,7 +17,7 @@ our ( $from, $author, %metadata, @commands, $tmpdir, $tmpcount, $prefix, $num_ar
 
 $num_args = $#ARGV + 1;
 if ($num_args != 1) {
-  print "\nUsage: create.pl path_to_dockerfile\n";
+  print "\nUsage: docker_compile.pl path_to_dockerfile\n";
   exit;
 }
 $docker_path=$ARGV[0];

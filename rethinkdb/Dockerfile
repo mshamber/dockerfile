@@ -27,7 +27,11 @@
 #    connecting you to an already running container.
 
 FROM ubuntu
-MAINTAINER Kimbro Staken
+MAINTAINER Michael Shamberger <shambergerm at nospam gmail.com>
+
+RUN echo "deb http://archive.ubuntu.com/ubuntu precise main universe" > /etc/apt/sources.list
+RUN apt-get update
+RUN apt-get upgrade -y
 
 RUN echo "0.2" > /version
 

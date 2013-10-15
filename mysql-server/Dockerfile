@@ -16,9 +16,12 @@
 #
 # docker run -i -t mysql-server mysql -u admin -p -h $MYSQL_IP
 
-FROM ubuntu:12.04
+FROM ubuntu
+MAINTAINER Michael Shamberger <shambergerm at nospam gmail.com>
 
-MAINTAINER Kimbro Staken version: 0.1
+RUN echo "deb http://archive.ubuntu.com/ubuntu precise main universe" > /etc/apt/sources.list
+RUN apt-get update
+RUN apt-get upgrade -y
 
 ADD ./mysql-setup.sh /tmp/mysql-setup.sh
 RUN /bin/sh /tmp/mysql-setup.sh

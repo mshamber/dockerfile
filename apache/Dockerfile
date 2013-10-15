@@ -1,7 +1,11 @@
 # A basic apache server. To use either add or bind mount content under /var/www
-FROM ubuntu:12.04
 
-MAINTAINER Kimbro Staken version: 0.1
+FROM ubuntu
+MAINTAINER Michael Shamberger <shambergerm at nospam gmail.com>
+
+RUN echo "deb http://archive.ubuntu.com/ubuntu precise main universe" > /etc/apt/sources.list
+RUN apt-get update
+RUN apt-get upgrade -y
 
 RUN apt-get update && apt-get install -y apache2 && apt-get clean && rm -rf /var/lib/apt/lists/*
 

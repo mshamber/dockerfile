@@ -1,7 +1,10 @@
+FROM ubuntu
+MAINTAINER Michael Shamberger <shambergerm at nospam gmail.com>
 
-FROM ubuntu:12.04
-
+RUN echo "deb http://archive.ubuntu.com/ubuntu precise main universe" > /etc/apt/sources.list
 RUN apt-get update
+RUN apt-get upgrade -y
+
 RUN apt-get install -y apache2 php5 libapache2-mod-php5 unzip
 
 ENV APACHE_RUN_USER www-data
