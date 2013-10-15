@@ -4,5 +4,9 @@ do
    # get the base directory
    export dir=$(dirname ${dockerfile})
    echo $dir
-   perl -X ./docker-compile.pl $dir
+   # docker_compile.pl takes 3 arguments: 
+   #   [0] directory where docker file exists
+   #   [1] repository name
+   #   [2] tag name
+   perl -X ./docker-compile.pl $dir scivm $dir
 done
