@@ -1,12 +1,14 @@
 #!/bin/bash
 set -x
-python --version
-mkdir -p /opt
-cd /opt
+
+export LANG="en_US.UTF-8"
+BASEDIR=/opt
+mkdir -p $BASEDIR
+cd $BASEDIR
 virtualenv scivm-env
-source ~/scivm-env/bin/activate
+source $BASEDIR/scivm-env/bin/activate
 pip install Django==1.5.4
 django-admin.py startproject --template=https://github.com/pinax/pinax-project-account/zipball/master scivmcom
 cd scivmcom
 pip install -r requirements.txt
-#python manage.py syncdb && python manage.py runserver
+python manage.py syncdb && python manage.py runserver
