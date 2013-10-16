@@ -22,7 +22,8 @@ RUN mkdir /var/www
 
 # install django + pinax
 ADD ./django_pinax.sh /tmp/django_pinax.sh
-RUN /bin/sh /tmp/django_pinax.sh
+# can't run this now since asking for information about sqllite db admin passsword
+#RUN /bin/sh /tmp/django_pinax.sh
 
 EXPOSE 80
 
